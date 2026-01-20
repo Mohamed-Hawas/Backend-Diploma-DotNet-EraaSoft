@@ -5,13 +5,6 @@
 
 `Program.cs` implements a simple interactive console application that manages an in-memory list of integers. The app displays a bordered menu and accepts a single-letter command (case-insensitive) to perform actions such as adding, printing, sorting, updating, deleting, and finding numbers, computing the mean, clearing the list, and quitting.
 
-This project targets .NET 10 and uses a single-file top-level program (C# 14).
-
-### Prerequisites
-
-- .NET 10 SDK installed
-- Visual Studio 2026 or the `dotnet` CLI
-
 
 ### Usage
 
