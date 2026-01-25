@@ -32,7 +32,7 @@ When run, the program prints a bordered menu and waits for a single-letter comma
 - The program stores data in an in-memory `List<int>` initialized with sample values.
 - Local functions implement each operation (e.g., `printNumbers()`, `addNumber()`, `calculateMean()`, `findSmallestNumber()`, `findLargestNumber()`, `findNumber()`, `clearNumbers()`, `sortNumbersAscending()`, `sortNumbersDescending()`, `swapNumbers()`, `updateNumber()`, `deleteNumber()`, `getNumbersCount()`, `findIndexOfNumber()`).
 - `addNumber` checks for duplicates using `findNumber` before inserting.
-- Sorting is implemented with a simple restart-style swap loop (functional but O(n^2)). Prefer `numbers.Sort()` and `numbers.Reverse()` for production code.
+- Sorting is implemented with a simple restart-style swap loop (functional but O(n^2)). 
 - Input parsing assumes well-formed input; add validation for robustness.
 - Methods that fail to find a value return `-1` or `false` and print a not-found message.
 
