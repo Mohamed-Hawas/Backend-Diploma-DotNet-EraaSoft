@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO.IsolatedStorage;
-using System.Runtime.Intrinsics.X86;
-
+﻿
 List<string> options = [
     "P. Print Numbers",
     "A. Add Number",
@@ -19,13 +16,8 @@ List<string> options = [
     "Q. Quit"
     ];
 char userOption;
-List<int> numbers = [ 8, 5, 3, 2 , 0, 9];
-////LinkedList<int> numbers = new LinkedList<int>();
-//numbers.AddLast(5);
-//numbers.AddLast(3);
-//numbers.AddLast(8);
-//numbers.AddLast(1);
-//numbers.AddLast(4);
+List<int> numbers = [ 8, 5, 3, 2, 0, 9];
+
 
 bool Flag = true;
 
@@ -46,18 +38,15 @@ while (Flag)
             printNumbers();
             break;
         case 'A':
-            Console.Write("How many numbers do you need to add : ");
-            int count = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter Numbers : ");
+            Console.Write("Enter Numbers separated by space \" \": ");
             string[] enteredNums = Console.ReadLine().Split(' ');
 
-            int[] nums = new int[count];
-            for (int i = 0; i < count; i++)
+            int[] nums = new int[enteredNums.Length];
+            for (int i = 0; i < enteredNums.Length; i++)
             {
                 nums[i] = Convert.ToInt32(enteredNums[i]);
             }
-            addNumber(nums, count);
+            addNumber(nums, enteredNums.Length);
             printNumbers();
             break;
         case 'M':
