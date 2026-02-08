@@ -3,11 +3,7 @@
 ## Overview
 This is a console-based Student Management System written in C#. It allows managing students, instructors, and courses, and supports enrollment and search operations using an interactive menu-driven interface.
 
-The project focuses on practicing:
-- Object-Oriented Programming (OOP)
-- Collections (List<T>)
-- Basic user input handling
-- Separation of concerns (Program vs Manager vs Entities)
+The project focuses on practicing: Object-Oriented Programming (OOP)
 
 ---
 
@@ -107,41 +103,4 @@ Task_5_Student_Management_System/
 - Search entities using either ID (Guid) or name
 
 ---
-
-## Error Handling
-- Basic validation for missing entities
-- Graceful messages when student, course, or instructor is not found
-- Invalid menu selections are handled
-
----
-
-## Requirements
-- .NET SDK (6.0 or later)
-- Console environment
-
----
-
-## How to Run
-1. Clone the repository
-2. Open the project in Visual Studio or VS Code
-3. Build the solution
-4. Run the application
-5. Follow the on-screen menu
-
----
-
-## Notes
-- Data is stored in memory only
-- No database or file persistence
-- IDs are generated using `Guid`
-- Designed for educational and practice purposes
-
----
-
-## Future Improvements
-- Add data persistence (JSON or database)
-- Improve input validation
-- Add update and delete operations
-- Refactor UI layer for better separation
-- Add unit tests
 
