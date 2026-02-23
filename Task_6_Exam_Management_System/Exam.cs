@@ -14,11 +14,7 @@ namespace Task_6_Exam_Management_System
             foreach (var question in Questions)
             {
                 totalMarks += question.QMark;
-                if (question.QModelAnswer == question.QChoices[question.QStudentAnswer[0] -1])
-                {
-                    marks += question.QMark;
-                    
-                }
+                marks += question.GetResult();
             }
             return $"Result : {marks} / {totalMarks} ";
         }
