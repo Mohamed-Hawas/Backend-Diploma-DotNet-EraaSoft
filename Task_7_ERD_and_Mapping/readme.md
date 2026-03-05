@@ -2,7 +2,7 @@
 
 ## ERD for Hospital
 ### Problem
-![](/images/ERD-1.jpg)
+![](images/ERD-1.jpg)
 ### ERD
 ![](/images/general_hospital_erd.png)
 
