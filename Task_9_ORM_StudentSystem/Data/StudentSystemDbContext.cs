@@ -14,7 +14,12 @@ namespace Task_9_ORM_StudentSystem.Data
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=StudentSystem;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;");
+            optionsBuilder.UseSqlServer(
+                @"Data Source=.\SQLEXPRESS;
+                Initial Catalog=StudentSystem;
+                Integrated Security=True;
+                Encrypt=True;
+                TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -105,9 +105,6 @@ namespace Task_9_ORM_StudentSystem.Migrations
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("ResourceId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
@@ -119,8 +116,6 @@ namespace Task_9_ORM_StudentSystem.Migrations
                     b.HasKey("ResourceId");
 
                     b.HasIndex("CourseId");
-
-                    b.HasIndex("ResourceId1");
 
                     b.ToTable("Resource");
                 });
@@ -143,8 +138,8 @@ namespace Task_9_ORM_StudentSystem.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PhoneNumber")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
 
                     b.Property<DateTime>("RegisteredOn")
                         .HasColumnType("datetime2");
@@ -190,19 +185,13 @@ namespace Task_9_ORM_StudentSystem.Migrations
 
             modelBuilder.Entity("Task_9_ORM_StudentSystem.Models.Resource", b =>
                 {
-                    b.HasOne("Task_9_ORM_StudentSystem.Models.Course", null)
+                    b.HasOne("Task_9_ORM_StudentSystem.Models.Course", "course")
                         .WithMany("resources")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Task_9_ORM_StudentSystem.Models.Resource", "resource")
-                        .WithMany()
-                        .HasForeignKey("ResourceId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("resource");
+                    b.Navigation("course");
                 });
 
             modelBuilder.Entity("Task_9_ORM_StudentSystem.Models.StudentCourses", b =>

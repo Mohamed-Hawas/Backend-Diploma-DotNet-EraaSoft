@@ -14,8 +14,8 @@ namespace Task_9_ORM_StudentSystem.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "PhoneNumber",
                 table: "Students",
-                type: "nvarchar(10)",
-                maxLength: 10,
+                type: "nvarchar(11)",
+                maxLength: 11,
                 nullable: true,
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)");
@@ -92,8 +92,7 @@ namespace Task_9_ORM_StudentSystem.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Url = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
-                    CourseId = table.Column<int>(type: "int", nullable: false),
-                    ResourceId1 = table.Column<int>(type: "int", nullable: false)
+                    CourseId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -103,12 +102,6 @@ namespace Task_9_ORM_StudentSystem.Migrations
                         column: x => x.CourseId,
                         principalTable: "Course",
                         principalColumn: "CourseId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Resource_Resource_ResourceId1",
-                        column: x => x.ResourceId1,
-                        principalTable: "Resource",
-                        principalColumn: "ResourceId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -152,11 +145,6 @@ namespace Task_9_ORM_StudentSystem.Migrations
                 column: "CourseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Resource_ResourceId1",
-                table: "Resource",
-                column: "ResourceId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_StudentCourses_CourseId",
                 table: "StudentCourses",
                 column: "CourseId");
@@ -184,8 +172,8 @@ namespace Task_9_ORM_StudentSystem.Migrations
                 nullable: false,
                 defaultValue: "",
                 oldClrType: typeof(string),
-                oldType: "nvarchar(10)",
-                oldMaxLength: 10,
+                oldType: "nvarchar(11)",
+                oldMaxLength: 11,
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(

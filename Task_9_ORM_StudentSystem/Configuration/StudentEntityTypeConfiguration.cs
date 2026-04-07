@@ -18,7 +18,7 @@ namespace Task_9_ORM_StudentSystem.Configuration
 
             // Phone Number
             builder.Property(s => s.PhoneNumber)
-                .HasMaxLength(10)
+                .HasMaxLength(11)
                 .IsRequired(false);
 
             //Birthday

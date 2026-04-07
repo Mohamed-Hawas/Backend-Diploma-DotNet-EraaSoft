@@ -11,13 +11,14 @@ namespace Task_9_ORM_StudentSystem.Models
         public string Url { get; set; }
         public ResourceType Type { get; set; }
         public int CourseId { get; set; }
-        public Resource resource { get; set; }
-        public enum ResourceType
-        {
-            Video = 1,
-            Presentation = 2,
-            Document = 3,
-            Other = 4
-        }
+        public Course course { get; set; }
+        
+    }
+    public enum ResourceType
+    {
+        Video = 1,
+        Presentation = 2,
+        Document = 3,
+        Other = 4
     }
 }
