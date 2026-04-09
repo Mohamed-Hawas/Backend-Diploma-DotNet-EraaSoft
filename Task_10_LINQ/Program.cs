@@ -143,7 +143,7 @@ namespace Task_10_LINQ
             //    Console.WriteLine($"Product Name : {item.ProductName}, ModelYear: {item.ModelYear}");
             //}
 
-            //11 - Display each product with the number of times it was ordered. 
+            // 11 - Display each product with the number of times it was ordered. 
             //var orders = db.OrderItems
             //    .GroupBy(oi => oi.Product)
             //    .Select(x => new
@@ -155,15 +155,123 @@ namespace Task_10_LINQ
             //{
             //    Console.WriteLine($"Product Name : {item.ProductName}, Count: {item.Count}");
             //}
-            //12 - Count the number of products in a specific category.
-            //13 - Calculate the average list price of products. 
+
+            // 12 - Count the number of products in a specific category.
+            //var products = db.Products
+            //    .GroupBy(p => p.Category)
+            //    .Select(x => new
+            //    {
+            //        x.Key.CategoryName,
+            //        count = x.Count()
+            //    });
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine($"Category Name: {item.CategoryName}, Count: {item.count}");
+            //}
+
+            //13 - Calculate the average list price of products.
+            //var Avg = db.Products
+            //    .Average(p => p.ListPrice);
+            //Console.WriteLine($"Average List Price: {Avg.ToString("c")}");
+
             //14 - Retrieve a specific product from the products table by ID.
-            //15 - List all products that were ordered with a quantity greater than 3 in any order. 
+            //var product = db.Products.SingleOrDefault(p => p.ProductId == 10);
+            //Console.WriteLine($"Product Name: {product?.ProductName}");
+
+            //15 - List all products that were ordered with a quantity greater than 3 in any order.
+            //var products = db.Products
+            //.Join(
+            //    db.OrderItems,
+            //    p => p.ProductId,
+            //    oi => oi.ProductId,
+            //    (p, oi) => new { p, oi }
+            //)
+            //.Where(x => x.oi.Quantity > 3)
+            //.Select(x => x.p.ProductName)
+            //.Distinct()
+            //.ToList();
+
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine($"Product : {item}");
+            //}
+
             //16 - Display each staff member’s name and how many orders they processed. 
-            //17 - List active staff members only(active = true) along with their phone numbers.
+            //var orders = db.Orders
+            //    .Join(
+            //    db.Staffs,
+            //    o => o.StaffId,
+            //    s => s.StaffId,
+            //    (o, s) => new { o, s }
+            //    )
+            //    .GroupBy(x => x.s)
+            //    .Select(x => new
+            //    {
+            //        Name = x.Key.FirstName + " " + x.Key.LastName,
+            //        Orders = x.Count()
+            //    });
+
+
+            //foreach (var item in orders)
+            //{
+            //    Console.WriteLine($"Staff Name : {item.Name} Count of orders {item.Orders} ");
+            //}
+
+
+            // 17 - List active staff members only(active = true) along with their phone numbers.
+            //var staffs = db.Staffs
+            //    .Where(s => s.Active == 1)
+            //    .Select(x => new
+            //    {
+            //        Name = x.FirstName + " " + x.LastName,
+            //        x.Active,
+            //        Phone = x.Phone
+            //    });
+
+            //foreach (var item in staffs)
+            //{
+            //    Console.WriteLine($"Staff Name : {item.Name}, Activity: {item.Active}, Phone : {item.Phone} ");
+            //}
+
             //18 - List all products with their brand name and category name.
+            //var products = db.Products
+            //    .Include(p => p.Brand)
+            //    .Include(p => p.Category)
+            //    .Select(x => new
+            //    {
+            //        x.ProductName,
+            //        x.Brand.BrandName,
+            //        x.Category.CategoryName
+            //    });
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine($"ProductName: {item.ProductName}, BrandName: {item.BrandName}, CategoryName: {item.CategoryName}");
+            //}
+
             //19 - Retrieve orders that are completed. 
+            //var completedOrders = db.Orders
+            //    .Where(o => o.ShippedDate != null);
+            
+            //foreach (var item in completedOrders)
+            //{
+            //    Console.WriteLine($"Order ID: {item.OrderId}, Shipped Date: {item.ShippedDate}");
+            //}
+
             //20 - List each product with the total quantity sold(sum of quantity from order_items).
+            //    var productSales = db.Products
+            //        .Select(p => new
+            //        {
+            //            p.ProductName,
+            //            TotalQuantitySold = db.OrderItems
+            //                .Where(oi => oi.ProductId == p.ProductId)
+            //                .Sum(oi => oi.Quantity)
+            //        });
+
+
+            //    foreach (var item in productSales)
+            //    {
+            //        Console.WriteLine($"ProductName: {item.ProductName}, TotalQuantitySold: {item.TotalQuantitySold}");
+            //    }
         }
     }
 }
