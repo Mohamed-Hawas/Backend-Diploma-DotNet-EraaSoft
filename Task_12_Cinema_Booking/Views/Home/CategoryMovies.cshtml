@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Movie>
+<section class="after-head d-flex section-text-white position-relative">
+    <div class="d-background" data-image-src="http://via.placeholder.com/1920x1080" data-parallax="scroll"></div>
+    <div class="d-background bg-black-80"></div>
+    <div class="top-block top-inner container">
+        <div class="top-block-content">
+            <h1 class="section-title">Movies list</h1>
+            <div class="page-breadcrumbs">
+                <a class="content-link" href="#">Home</a>
+                <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
+                <span>Movies</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-long">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <article class="movie-line-entity">
+                <div class="entity-poster" data-role="hover-wrap">
+                    <div class="embed-responsive embed-responsive-poster">
+                        <img class="embed-responsive-item" src="~/imgs/Movies/@(item.MainImg).jfif" alt="" />
+                    </div>
+                    <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
+                        <div class="entity-play">
+                            <a class="action-icon-theme action-icon-bordered rounded-circle" href="https://www.youtube.com/watch?v=d96cjJhvlMA" data-magnific-popup="iframe">
+                                <span class="icon-content"><i class="fas fa-play"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="entity-content">
+                    <h4 class="entity-title">
+                        <a class="content-link" href="/home/details/@item.Id">@item.Name</a>
+                    </h4>
+                    <div class="entity-category">
+                        <a class="content-link" href="/home/CategoryMovies/@item.CategoryId">@item.Category.Name</a>
+                    </div>
+                    <div class="entity-info">
+                        <div class="info-lines">
+                            <div class="info info-short">
+                                <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
+                                <span class="info-text">@item.Rate</span>
+                                <span class="info-rest">/10</span>
+                            </div>
+                            <div class="info info-short">
+                                <span class="text-theme info-icon"><i class="fas fa-clock"></i></span>
+                                <span class="info-text">@item.Duration</span>
+                                <span class="info-rest">&nbsp;min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-short entity-text">@item.Description</p>
+                    
+                </div>
+                <div class="entity-extra">
+                    <div class="text-uppercase entity-extra-title">Showtime</div>
+                    <div class="entity-showtime showtime-wrap ">
+                        <span class=" btn-time btn" aria-disabled="true">@item.ShowTime.Month : @item.ShowTime.Day</span>
+                    </div>
+                </div>
+            </article>
+
+        }
+       
+    </div>
+</section>

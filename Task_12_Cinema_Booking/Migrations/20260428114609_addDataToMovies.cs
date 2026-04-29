@@ -1,0 +1,22 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace Task_12_Cinema_Booking.Migrations
+{
+    /// <inheritdoc />
+    public partial class addDataToMovies : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.Sql("insert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Ice Men', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\r\n\r\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\r\n\r\nFusce consequat. Nulla nisl. Nunc nisl.', '12/5/2027', 8, 9, 163, 9.4, 5);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Asterix & Obelix: God Save Britannia (Astérix et Obélix: Au service de Sa Majesté)', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\r\n\r\nFusce consequat. Nulla nisl. Nunc nisl.', '10/26/2025', 4, 7, 125, 5.9, 8);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Antique (Sayangkoldong yangkwajajeom aentikeu)', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\r\n\r\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\r\n\r\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', '8/20/2025', 1, 4, 120, 4.2, 6);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Blue Spring (Aoi haru)', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\r\n\r\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\r\n\r\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '9/25/2025', 3, 6, 156, 0.4, 6);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('One True Thing', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', '11/27/2025', 10, 7, 186, 2.9, 5);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Mahler', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\r\n\r\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\r\n\r\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '11/28/2025', 9, 3, 189, 5.9, 10);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Flipper', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '11/30/2025', 2, 1, 174, 3.9, 3);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Sunset', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\r\n\r\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '7/18/2025', 4, 5, 193, 1.0, 8);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Patsy', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '11/13/2025', 1, 3, 105, 1.0, 2);\r\ninsert into Movies (Name, Description, ShowTime, CinemaId, CategoryId, Duration, Rate, MainImg) values ('Ashes and Diamonds (Popiól i diament)', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', '10/11/2026', 5, 7, 74, 8.8, 7);\r\n");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.Sql("TRUNCATE TABLE Movies;");
+        }
+    }
+}
